@@ -3,9 +3,15 @@
 This is a hobby application. I created it to practice building single page applications.
 
 ## Tech details of the app
+
+### Backend
+- [Git repo](https://github.com/tothpeter/hobby-time-manager-api)
 - The backend is a Rails 5 API only app
-- The frontend is an Ember JS app with bootstrap and sass
 - It uses the [JSON API](http://jsonapi.org/) recommendation
+
+### Frontend
+- [Git repo](https://github.com/tothpeter/hobby-time-manager-client)
+- The frontend is an Ember JS app with bootstrap and sass
 
 ## Features of the app
 - Users can create an account and log in
