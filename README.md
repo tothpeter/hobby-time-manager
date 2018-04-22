@@ -2,6 +2,21 @@
 
 This is a hobby application. I created it to practice building single page applications.
 
+[Demo: time-manager.kalina.tech](http://time-manager.kalina.tech/)
+
+Demo users:
+- Regular user
+  - email: manager@manager.com
+  - password: 123123
+- Manager user
+  - email: employee@employee.com
+  - password: 123123
+- Admin user
+  - email: test@test.com
+  - password: 123123
+
+The server restores the DB automatically every morning.
+
 ## Tech details of the app
 
 ### Backend
