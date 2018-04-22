@@ -1,6 +1,6 @@
 # Time Management App
 
-This is a hobby application. I created it to practice building single page applications.
+This is a hobby application. I started it to practice building single page applications.
 
 [Demo: time-manager.kalina.tech](http://time-manager.kalina.tech/)
 
@@ -22,11 +22,11 @@ The server restores the DB automatically every morning.
 ### Backend
 - [Git repo](https://github.com/tothpeter/hobby-time-manager-api)
 - The backend is a Rails 5 API only app
-- It uses the [JSON API](http://jsonapi.org/) recommendation
+- It uses the [JSON API](http://jsonapi.org/) recommendation for formatting the JSON output
 
 ### Frontend
 - [Git repo](https://github.com/tothpeter/hobby-time-manager-client)
-- The frontend is an Ember JS app with bootstrap and sass
+- The frontend is an Ember JS app with Bootstrap and SASS
 
 ## Features of the app
 - Users can create an account and log in
