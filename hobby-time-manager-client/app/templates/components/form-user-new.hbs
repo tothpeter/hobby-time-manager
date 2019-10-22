@@ -1,0 +1,98 @@
+{{#lf-form rules=rules as |validateFunc isValid|}}
+  <div class="row">
+    <div class="col-lg-6">
+      {{lf-input
+        name="email"
+        label="*Email"
+        property=model.email
+        on-update=(action (mut model.email))
+        validate=validateFunc
+        errors=externalErrors.email
+      }}
+    </div>
+
+    <div class="col-lg-6">
+      {{lf-input
+        name="username"
+        label="*Username"
+        property=model.username
+        on-update=(action (mut model.username))
+        validate=validateFunc
+        errors=externalErrors.username
+      }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      {{lf-input
+        name="firstName"
+        label="First Name"
+        property=model.firstName
+        on-update=(action (mut model.firstName))
+        validate=validateFunc
+        errors=externalErrors.firstName
+      }}
+    </div>
+
+    <div class="col-lg-6">
+      {{lf-input
+        name="lastName"
+        label="Last Name"
+        property=model.lastName
+        on-update=(action (mut model.lastName))
+        validate=validateFunc
+        errors=externalErrors.lastName
+      }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      {{lf-input
+        name="password"
+        label="*Password"
+        type="password"
+        property=model.password
+        on-update=(action (mut model.password))
+        validate=validateFunc
+        errors=externalErrors.password
+      }}
+    </div>
+
+    <div class="col-lg-6">
+      {{lf-input
+        name="passwordConfirmation"
+        label="*Password confirmation"
+        type="password"
+        validate=validateFunc
+      }}
+    </div>
+  </div>
+
+  {{lf-input
+    label="*Preferred working hours per day"
+    name="preferredWorkingHoursPerDay"
+    property=model.preferredWorkingHoursPerDay
+    on-update=(action (mut model.preferredWorkingHoursPerDay))
+    inputComponent="working-time-picker"
+    validate=validateFunc
+    inputClass="no-lf-input-style"
+    errors=externalErrors.preferredWorkingHoursPerDay
+  }}
+
+  {{#if currentUser.user.isAdmin}}
+    <div class="form-group">
+      <label>Access level</label>
+      <div>
+        <select onchange={{action (mut model.accessLevel) value="target.value"}}>
+          <option value="employee" selected={{eq model.accessLevel 'employee'}}>Employee</option>
+          <option value="manager" selected={{eq model.accessLevel 'manager'}}>Manager</option>
+          <option value="admin" selected={{eq model.accessLevel 'admin'}}>Admin</option>
+        </select>
+      </div>
+    </div>
+  {{/if}}
+
+  <button class="btn btn-primary" disabled={{not isValid}}>{{submitButtonLabel}}</button>
+{{/lf-form}}

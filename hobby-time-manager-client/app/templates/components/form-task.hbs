@@ -1,0 +1,44 @@
+{{#lf-form rules=rules onSubmit=(action 'submit') as |validateFunc isValid|}}
+  {{lf-input
+    label="*Date"
+    name="date"
+    property=model.date
+    on-update=(action 'updateDate')
+    inputComponent="lf-date-picker"
+    validate=validateFunc
+    inputClass="no-lf-input-style"
+    errors=externalErrors.date
+  }}
+
+  {{lf-input
+    label="*Working hours"
+    name="duration"
+    property=model.duration
+    on-update=(action (mut model.duration))
+    inputComponent="working-time-picker"
+    validate=validateFunc
+    inputClass="no-lf-input-style"
+    errors=externalErrors.duration
+  }}
+
+  {{lf-input
+    label="*Title"
+    name="title"
+    property=model.title
+    on-update=(action (mut model.title))
+    validate=validateFunc
+    errors=externalErrors.title
+  }}
+
+  {{lf-textarea
+    label="Description"
+    name="description"
+    property=model.description
+    on-update=(action (mut model.description))
+    validate=validateFunc
+    errors=externalErrors.description
+  }}
+
+  <button class="btn btn-primary" disabled={{not isValid}}>{{label}}</button>
+  <button class="btn btn-default" {{action 'cancel'}}>Cancel</button>
+{{/lf-form}}

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-lg-4">
+    {{#link-to "dashboard.me.tasks.new" class="btn btn-primary"}}
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New task
+    {{/link-to}}
+  </div>
+
+  <div class="col-lg-4">
+    {{date-range-picker
+      start=startDate
+      end=endDate
+      applyAction=(action 'setDateRange')
+      dateLimit=dateLimit
+      format="YYYY-MM-DD"
+      alwaysShowCalendars=true
+      autoApply=true
+    }}
+  </div>
+
+  <div class="col-lg-4">
+    <button class="btn btn-default pull-right" {{action 'export'}}>
+      <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Export
+    </button>
+  </div>
+</div>
+
+{{task-list tasks=model}}

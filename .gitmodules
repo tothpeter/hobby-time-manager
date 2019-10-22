@@ -1,6 +1,0 @@
-[submodule "hobby-time-manager-api"]
-	path = hobby-time-manager-api
-	url = https://github.com/tothpeter/hobby-time-manager-api
-[submodule "hobby-time-manager-client"]
-	path = hobby-time-manager-client
-	url = https://github.com/tothpeter/hobby-time-manager-client
